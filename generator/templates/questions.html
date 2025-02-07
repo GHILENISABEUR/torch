@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questions Générées</title>
+</head>
+<body>
+    <h1>Questions Générées</h1>
+    <ul>
+        {% for question in questions %}
+            <li>
+                <strong>{{ question.question_type }}:</strong> {{ question.question }}
+                {% if question.options %}
+                    <ul>
+                        {% for option in question.options %}
+                            <li>{{ option }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
